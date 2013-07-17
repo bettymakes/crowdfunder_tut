@@ -18,9 +18,12 @@
 <div class="container">
 Listing projects
 
-Project 1
+<ul>
+  <%= @projects.each do |project| %>
+  <li>
+    <%= link_to "Project #{project.id}", project_path(project) %>
+  </li>
+  <% end %>
+</ul>
 
-Project 2
-
-Project 3
 </div>
