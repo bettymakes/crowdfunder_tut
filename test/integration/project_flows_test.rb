@@ -48,7 +48,9 @@ class ProjectFlowsTest < ActionDispatch::IntegrationTest
     assert_equal "Projects", find('.navbar ul li.active a').text
 
     # On a project's show page, the Projects nav element should still be active
+    # print page.html
     click_link 'Project 1'
+
     assert_equal "Projects", find('.navbar ul li.active a').text
 
   end
