@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserAuthenticationFlowsTest < ActionDispatch::IntegrationTest
 
-  test "successful registration" do 
+test "successful registration" do 
     visit "/users/new"
     assert_equal new_user_path, current_path
 
@@ -39,4 +39,5 @@ class UserAuthenticationFlowsTest < ActionDispatch::IntegrationTest
     # ... no message saying "Account created" should appear
     assert page.has_no_content?("Account created")
   end
+
 end
