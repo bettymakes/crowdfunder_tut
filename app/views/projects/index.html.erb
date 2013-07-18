@@ -3,7 +3,7 @@
 Listing projects
 
 <ul>
-  <%= @projects.each do |project| %>
+  <% @projects.each do |project| %>
   <li>
     <%= link_to "#{project.title}", project_path(project) %>
   </li>
