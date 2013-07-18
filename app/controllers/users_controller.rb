@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params.permit![:user])
     if @user.save
+      auto_login(@user)
       redirect_to root_path, :notice => "Account created"
     else
       render :new
