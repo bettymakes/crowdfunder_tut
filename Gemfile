@@ -39,7 +39,7 @@ end
 
 
 group :tools do
-  gem 'guard-test'
+  gem 'guard-minitest'
 end
 
 group :development do

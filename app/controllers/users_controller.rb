@@ -5,12 +5,25 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params.permit![:user])
+    @user = User.new(user_params)
     if @user.save
       auto_login(@user)
       redirect_to root_path, :notice => "Account created"
     else
+      flash.now.alert = "Try again"
       render :new
     end
   end
+
+  private
+
+  def user_params
+    params.require(:user).permit(
+      :email, 
+      :first_name, 
+      :last_name, 
+      :password
+    )
+  end
+  
 end
