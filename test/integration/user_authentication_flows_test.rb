@@ -16,7 +16,6 @@ test "successful registration" do
     fill_in "user[first_name]", :with => user.first_name
     fill_in "user[last_name]", :with => user.last_name
     fill_in "user[password]", :with => user.password
-    fill_in "user[username]", :with => user.username
     click_button "Create Account"
 
     # After submitting the form, should be redirected to root
