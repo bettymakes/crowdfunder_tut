@@ -39,6 +39,5 @@ class UserAuthenticationFlowsTest < ActionDispatch::IntegrationTest
     #... no message saying "Account created" should appear
     assert page.has_no_content?("Account created")
   end
-  end
 
 end
