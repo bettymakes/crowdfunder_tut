@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserAuthenticationFlowsTest < ActionDispatch::IntegrationTest
 
-test "successful registration" do 
+  test "successful registration" do 
     visit "/users/new"
     assert_equal new_user_path, current_path
 
@@ -52,7 +52,7 @@ test "successful registration" do
   end
 
   test "unsuccessful log in" do
-    visit '/session/new'
+    visit '/sessions/new'
 
     fill_in "email", with: "a@b.com"
     fill_in "password", with: "invalid creds"
