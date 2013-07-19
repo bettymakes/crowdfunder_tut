@@ -1,11 +1,11 @@
-
+<% provide(:li_projects_class, "class=active") %>
 <div class="container">
-Listing projects
+<h3>Listing projects</h3>
 
 <ul>
   <% @projects.each do |project| %>
-  <li>
-    <%= link_to "#{project.title}", project_path(project) %>
+  <li class="well">
+    <h4><%= link_to "#{project.title}", project_path(project) %></h4>
   </li>
   <% end %>
 </ul>

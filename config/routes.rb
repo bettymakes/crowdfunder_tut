@@ -6,7 +6,7 @@ Crowdfunder::Application.routes.draw do
   get "signup" => "users#new", :as => "signup"
 
   resources :projects
+  resources :pledges, :only => [:new, :create]
   resources :users, except: [:index]
   resources :sessions
-  resources :pledges
 end

@@ -1,0 +1,9 @@
+<h1>Pledges</h2>
+
+<%= form_for @pledge do |f| %>
+  <%= f.label :amount %>
+  <%= f.number_field :amount %>
+<div class="container"> 
+  <%= f.submit %>
+<div>
+<% end %>
