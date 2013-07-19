@@ -8,4 +8,5 @@ Crowdfunder::Application.routes.draw do
   resources :projects
   resources :users, except: [:index]
   resources :sessions
+  resources :pledges
 end
