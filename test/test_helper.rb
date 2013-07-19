@@ -32,10 +32,11 @@ class ActionDispatch::IntegrationTest
   def setup_signed_in_user
     pass = "this-is-a-password"
     user = FactoryGirl.create :user, password: pass
-    visit 'sessions/new'
-
+    visit new_session_path
+    # binding.pry
     fill_in "email", with: user.email
     fill_in "password", with: pass
     click_button "Login"
+    user
   end
 end
