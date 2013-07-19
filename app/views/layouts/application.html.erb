@@ -8,48 +8,50 @@
 </head>
 <body>
 
-<div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <a class="brand" href="#">CrowdFunder</a>
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li class="<%= 'active' if current_page? root_path %>">
-            <%= link_to 'Home', :root %>
-          </li>
-          <li class="<%= 'active' if params[:controller] == 'projects' && (!current_page? root_path) %>">
-            <%= link_to 'Projects', :projects %>
-          </li>
-          <li>
-          <% if current_user %>
-            <%= link_to "Logout", logout_path %>
-          <% else %>
-            <li>
-              <%= link_to "Sign Up", new_user_path %>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="#">CrowdFunder</a>
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li class="<%= 'active' if current_page? root_path %>">
+              <%= link_to 'Home', :root %>
+            </li>
+            <li class="<%= 'active' if params[:controller] == 'projects' && (!current_page? root_path) %>">
+              <%= link_to 'Projects', :projects %>
             </li>
             <li>
-              <%= link_to "Login", new_session_path %>
+              <% if current_user %>
+              <%= link_to "Logout", logout_path %>
+              <% else %>
+              <li>
+                <%= link_to "Sign Up", new_user_path %>
+              </li>
+              <li>
+                <%= link_to "Login", new_session_path %>
+              </li>
+              <% end %>
             </li>
-          <% end %>
-          </li>
-        </ul>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<% if flash[:notice] %>
-  <div class="alert alert-block">
-    <p id="notice"><%= flash[:notice] %></p>
-  </div>
-<% end %>
-<% if flash[:alert] %>
-  <div class="alert alert-block">
-    <p id="alert"><%= flash[:alert] %></p>
-  </div>
-<% end %>
+  <div class="container page">
+    <% if flash[:notice] %>
+    <div class="alert alert-block">
+      <p id="notice"><%= flash[:notice] %></p>
+    </div>
+    <% end %>
+    <% if flash[:alert] %>
+    <div class="alert alert-block">
+      <p id="alert"><%= flash[:alert] %></p>
+    </div>
+    <% end %>
 
 
-<%= yield %>
+    <%= yield %>
+  </div>
 
 </body>
 </html>
